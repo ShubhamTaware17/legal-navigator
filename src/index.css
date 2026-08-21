@@ -1,0 +1,75 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    scroll-behavior: smooth;
+  }
+  body {
+    @apply font-sans text-navy-900 bg-navy-50;
+  }
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-display;
+  }
+}
+
+@layer components {
+  .container-app {
+    @apply max-w-7xl mx-auto px-4 sm:px-6 lg:px-8;
+  }
+  .btn {
+    @apply inline-flex items-center justify-center gap-2 font-semibold rounded-xl transition-all duration-200 disabled:opacity-50 disabled:cursor-not-allowed;
+  }
+  .btn-primary {
+    @apply btn bg-navy-700 text-white px-5 py-3 hover:bg-navy-800 active:scale-[0.98] shadow-soft;
+  }
+  .btn-secondary {
+    @apply btn bg-white text-navy-700 border border-navy-200 px-5 py-3 hover:bg-navy-50 active:scale-[0.98];
+  }
+  .btn-accent {
+    @apply btn bg-teal-500 text-white px-5 py-3 hover:bg-teal-600 active:scale-[0.98] shadow-soft;
+  }
+  .btn-ghost {
+    @apply btn text-navy-600 px-4 py-2 hover:bg-navy-50;
+  }
+  .btn-danger {
+    @apply btn bg-error-500 text-white px-5 py-3 hover:bg-error-600 active:scale-[0.98];
+  }
+  .input {
+    @apply w-full rounded-xl border border-navy-200 bg-white px-4 py-3 text-navy-900 placeholder:text-navy-400 focus:outline-none focus:ring-2 focus:ring-navy-500/30 focus:border-navy-500 transition-all;
+  }
+  .label {
+    @apply block text-sm font-semibold text-navy-700 mb-1.5;
+  }
+  .card {
+    @apply bg-white rounded-2xl border border-navy-100 shadow-card;
+  }
+  .badge {
+    @apply inline-flex items-center gap-1 rounded-full px-2.5 py-0.5 text-xs font-semibold;
+  }
+  .section-title {
+    @apply text-3xl sm:text-4xl font-bold text-navy-900 tracking-tight;
+  }
+  .section-subtitle {
+    @apply text-base sm:text-lg text-navy-500 mt-3;
+  }
+}
+
+@layer utilities {
+  .scrollbar-thin::-webkit-scrollbar {
+    width: 6px;
+    height: 6px;
+  }
+  .scrollbar-thin::-webkit-scrollbar-thumb {
+    @apply bg-navy-200 rounded-full;
+  }
+  .scrollbar-thin::-webkit-scrollbar-track {
+    @apply bg-transparent;
+  }
+  .text-balance {
+    text-wrap: balance;
+  }
+}
